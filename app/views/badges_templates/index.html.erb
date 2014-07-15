@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>Badges</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Internet points</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @badges_templates.each do |badge| %>
+    <tr>
+      <td><%= badge.name %></td>
+      <td><%= badge.description %></td>
+      <td><%= badge.internet_points %></td>
+      <td><%= link_to 'Show', badge, :class => 'btn btn-mini' %></td>
+      <td><%= link_to 'Edit', edit_badge_path(badge), 
+	      :class => 'btn btn-mini' %></td>
+      <td><%= link_to 'Destroy', badge, method: :delete, 
+	      data: { confirm: 'Are you sure?' }, 
+	      :class => 'btn btn-mini btn-danger' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to 'New Badge', new_badges_template_path, :class => 'btn btn-primary' %>
+</div>

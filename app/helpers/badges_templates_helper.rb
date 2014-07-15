@@ -1,0 +1,2 @@
+module BadgesTemplatesHelper
+end

@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CyberBadgesApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>CyberBadgesApp</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <div class="row">
+      <div class="span3">
+	<ul class="nav nav-list">
+	  <li class="nav-header">CYBER WVU BADGES</li>
+	  <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to 'Home', root_path %></li>
+	  <li class="<%= 'active' if params[:controller] == 'badges_template' %>"><%= link_to 'Badges', badges_templates_path %></li>
+	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'My Badges', account_path(1) %></li>
+	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'Create Account', accounts_path %></li>
+	</ul>
+      </div>
 
-</body>
+      <div class="span9">
+	<%= yield %>
+      </div>
+    </div>
+  </body>
 </html>

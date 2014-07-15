@@ -1,0 +1,24 @@
+<% unless notice.nil? %>
+<div class="alert">
+  <p id="notice"><%= notice %></p>
+</div>
+<% end %>
+
+<div class="page-header">
+  <h1><%= @badges_template.name %></h1>
+</div>
+
+<p>
+  <%= @badges_template.description %>
+</p>
+
+<p>
+  <b>Internet points:</b>
+  <%= @badges_template.internet_points %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Edit', edit_badges_template_path(@badges_template),
+      :class => 'btn' %> 
+  <%= link_to 'Back', badges_templates_path, :class => 'btn' %>
+</div>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @badges_template.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @badges_template.description %>
+</p>
+
+<p>
+  <b>Internet points:</b>
+  <%= @badges_template.internet_points %>
+</p>
+
+
+<%= link_to 'Edit', edit_badges_template_path(@badges_template) %> |
+<%= link_to 'Back', badges_templates_path %>
