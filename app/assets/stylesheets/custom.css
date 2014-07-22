@@ -2,3 +2,8 @@ textarea.kfrank-text {
     width: 200px;
     height: 100px;
 }
+
+.kfrank-li {
+    padding: 10px 5px 10px !important;
+    color: #777;
+}
