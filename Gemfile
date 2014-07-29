@@ -40,3 +40,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'devise'
+gem 'devise_ldap_authenticatable'
