@@ -31,6 +31,10 @@ GEM
     arel (3.0.3)
     bcrypt (3.1.7)
     builder (3.2.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -66,8 +70,13 @@ GEM
     mime-types (1.25.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     polyglot (0.3.5)
-    rack (1.5.2)
+    rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
     rack-ssl (1.3.4)
@@ -93,7 +102,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
-    sass (3.3.10)
+    sass (3.3.11)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -119,7 +128,7 @@ GEM
       rails (>= 3.1)
       railties (>= 3.1)
     tzinfo (0.3.40)
-    uglifier (2.5.1)
+    uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
@@ -133,6 +142,8 @@ DEPENDENCIES
   devise
   jquery-rails
   less-rails
+  paperclip (~> 4.1)
+  rack (= 1.4.5)
   rails (= 3.2.16)
   sass-rails (~> 3.2.3)
   sqlite3
