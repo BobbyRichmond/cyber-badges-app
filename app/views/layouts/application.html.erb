@@ -15,7 +15,7 @@
 	  <ul class="nav">
 	    <% if user_signed_in? %>
 	    <li class="kfrank-li"><%= current_user.login %></li>
-	    <li><%= link_to "Sign out", destroy_user_session_path %></li>
+	    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 	    <% else %>
 	    <li><%= link_to "Sign in", new_user_session_path %></li>
 	    <% end %>
@@ -32,13 +32,23 @@
 	  <% if user_signed_in? %>
 	  <li class="<%= 'active' if params[:controller] == 'badges_template' %>"><%= link_to 'Badges', badges_templates_path %></li>
 	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'My Badges', account_path(current_user) %></li>
-	  <% else %>
-	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'Create Account', accounts_path %></li>
 	  <% end %>
 	</ul>
       </div>
 
       <div class="span9">
+	
+	<% if notice %>
+	<div class="alert">
+	  <p id="notice"><%= notice %></p>
+	</div>
+	<% end %>
+	<% if alert %>
+	<div class="alert">
+	  <p id="alert"><%= alert %></p>
+	</div>
+	<% end %>
+
 	<div class="row">
 	  
 	</div>

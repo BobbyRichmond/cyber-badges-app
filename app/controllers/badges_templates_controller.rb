@@ -1,4 +1,6 @@
 class BadgesTemplatesController < ApplicationController
+  before_filter :authenticate_admin, :except => [:index, :show]
+
   # GET /badges_templates
   # GET /badges_templates.json
   def index
@@ -78,6 +80,13 @@ class BadgesTemplatesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to badges_templates_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+  def authenticate_admin
+    unless current_user.account.admin
+      redirect_to root_path, notice: "You don't have permission to do that grumpy cat!!"
     end
   end
 end

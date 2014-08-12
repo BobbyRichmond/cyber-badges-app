@@ -4,5 +4,5 @@ class ApplicationController < ActionController::Base
   end
   protect_from_forgery
 
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!
 end

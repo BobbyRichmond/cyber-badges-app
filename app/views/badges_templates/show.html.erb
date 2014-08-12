@@ -20,7 +20,10 @@
 </p>
 
 <div class="form-actions">
+  <%= link_to 'I need dis', add_badge_path(current_user.account, :badge_id => @badge.id), :class => 'btn btn-success' %>
+  <% if current_user.account.admin %>
   <%= link_to 'Edit', edit_badges_template_path(@badges_template),
       :class => 'btn' %> 
+  <% end %>
   <%= link_to 'Back', badges_templates_path, :class => 'btn' %>
 </div>

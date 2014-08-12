@@ -9,8 +9,10 @@
       <th>Description</th>
       <th>Internet points</th>
       <th></th>
+      <% if current_user.account.admin %>
       <th></th>
       <th></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -21,16 +23,20 @@
       <td><%= badge.description %></td>
       <td><%= badge.internet_points %></td>
       <td><%= link_to 'Show', badge, :class => 'btn btn-mini' %></td>
+      <% if current_user.account.admin %>
       <td><%= link_to 'Edit', edit_badges_template_path(badge), 
 	      :class => 'btn btn-mini' %></td>
       <td><%= link_to 'Destroy', badge, method: :delete, 
 	      data: { confirm: 'Are you sure?' }, 
 	      :class => 'btn btn-mini btn-danger' %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
 </table>
 
+<% if current_user.account.admin %>
 <div class="form-actions">
   <%= link_to 'New Badge', new_badges_template_path, :class => 'btn btn-primary' %>
 </div>
+<% end %>
