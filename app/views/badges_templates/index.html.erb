@@ -21,7 +21,7 @@
       <td><%= badge.description %></td>
       <td><%= badge.internet_points %></td>
       <td><%= link_to 'Show', badge, :class => 'btn btn-mini' %></td>
-      <td><%= link_to 'Edit', edit_badge_path(badge), 
+      <td><%= link_to 'Edit', edit_badges_template_path(badge), 
 	      :class => 'btn btn-mini' %></td>
       <td><%= link_to 'Destroy', badge, method: :delete, 
 	      data: { confirm: 'Are you sure?' }, 

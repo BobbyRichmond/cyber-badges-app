@@ -29,9 +29,12 @@
 	<ul class="nav nav-list nav-inverse">
 	  <li class="nav-header">CYBER WVU BADGES</li>
 	  <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to 'Home', root_path %></li>
+	  <% if user_signed_in? %>
 	  <li class="<%= 'active' if params[:controller] == 'badges_template' %>"><%= link_to 'Badges', badges_templates_path %></li>
-	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'My Badges', account_path(1) %></li>
+	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'My Badges', account_path(current_user) %></li>
+	  <% else %>
 	  <li class="<%= 'active' if params[:controller] == 'account' %>"><%= link_to 'Create Account', accounts_path %></li>
+	  <% end %>
 	</ul>
       </div>
 

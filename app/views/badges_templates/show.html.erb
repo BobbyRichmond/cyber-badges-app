@@ -8,6 +8,8 @@
   <h1><%= @badges_template.name %></h1>
 </div>
 
+<%= image_tag @badges_template.photo.url(:small) %>
+
 <p>
   <%= @badges_template.description %>
 </p>
